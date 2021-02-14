@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Карточка авто</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-1to10.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-horizontal.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-movie.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-pill.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-reversed.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/bars-square.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/css-stars.css">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-carousel/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/slick-carousel/css/slick-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.mCustomScrollbar.css">
+</head>
+
+<body>
+
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="mobile-search waves-effect waves-light">
+                            <div class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close"><i
+                                                class="ti-close input-group-text"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn"><i
+                                                class="ti-search input-group-text"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a href="#!" class="waves-effect waves-light">
+                                    <img src="/assets/images/user.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span>{{ user_info.name }}</span>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li class="waves-effect waves-light">
+                                        <a href="/logout">
+                                            Выход
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header" style="min-height: 104px;">
+                                </div>
+                            </div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="/" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>N</b></span>
+                                        <span class="pcoded-mtext">Главная</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">{{ car_info.name_car }}</h5>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div class="card product-detail-page">
+                                                    <div class="card-block">
+                                                        <div class="row">
+                                                            <div class="col-lg-5 col-xs-12">
+                                                                <div class="port_details_all_img row">
+                                                                    <div class="col-lg-12 m-b-15">
+                                                                        <div id="big_banner">
+                                                                            <div class="port_big_img">
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=0) }}"
+                                                                                    alt="Big_ Details">
+                                                                            </div>
+                                                                            <div class="port_big_img">
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=1) }}"
+                                                                                    alt="Big_ Details">
+                                                                            </div>
+                                                                            <div class="port_big_img">
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=2) }}"
+                                                                                    alt="Big_ Details">
+                                                                            </div>
+                                                                            <div class="port_big_img">
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=3) }}"
+                                                                                    alt="Big_ Details">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-12 product-right">
+                                                                        <div id="small_banner">
+                                                                            <div>
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=0) }}"
+                                                                                    alt="small-details">
+                                                                            </div>
+                                                                            <div>
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=1) }}"
+                                                                                    alt="small-details">
+                                                                            </div>
+                                                                            <div>
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=2) }}"
+                                                                                    alt="small-details">
+                                                                            </div>
+                                                                            <div>
+                                                                                <img class="img img-fluid"
+                                                                                    src="{{ url_for('get_img', id=car_info.id, num=3) }}"
+                                                                                    alt="small-details">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-xs-12 product-detail"
+                                                                id="product-detail">
+                                                                <div class="row">
+                                                                    <div>
+                                                                        <div class="col-lg-12">
+                                                                            <span class="txt-muted d-block">ID авто:
+                                                                                <span>{{ car_info.id }}</span>
+                                                                            </span>
+                                                                            <span class="txt-muted d-block">Доступность:
+                                                                                {% if car_info.rental_status == 1 %}
+                                                                                    <span
+                                                                                        class="text-primary">Занята</span>
+                                                                                {% else %}
+                                                                                    <span
+                                                                                        class="text-primary">Свободна</span>
+                                                                                {% endif %}
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <h4 class="pro-desc">{{ name_auto }}
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <span class="txt-muted">Автоматическая КПП:
+                                                                                {% if car_info.transmission %}
+                                                                                    Да
+                                                                                {% else %}
+                                                                                    Нет
+                                                                                {% endif %}
+
+                                                                            </span>
+                                                                        </div>
+                                                                        <div
+                                                                            class="stars stars-example-css m-t-15 detail-stars col-lg-12">
+                                                                            <select id="product-view"
+                                                                                class="rating-star" name="rating"
+                                                                                autocomplete="off">
+                                                                                <option value="1">1</option>
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-lg-12">
+                                                                            <span
+                                                                                class="text-primary product-price">{{ car_info.rental_price }}
+                                                                                руб/мин</span>
+                                                                            <hr>
+                                                                            <p>{{ car_info.description }}
+                                                                            </p>
+                                                                            {% for msg in get_flashed_messages() %}
+                                                                               <div class="flash"> {{msg}} </div>
+                                                                            {% endfor %}
+                                                                            <hr>
+                                                                        </div>
+                                                                        <div
+                                                                            class="col-lg-12 col-sm-12 mob-product-btn">
+                                                                            {% if car_info.rental_status == 0 or (car_info.rental_status == 1 and user_info.id == car_info.user) %}
+                                                                            <form action="/rental/{{user_info.id}}/{{car_info.id}}" method="post"
+                                                                                class="d-inline-block">
+                                                                                    <button type="submit"
+                                                                                        class="btn btn-success waves-effect waves-light m-r-20">
+                                                                                        <i class="icofont icofont-cart-alt f-16"></i>
+                                                                                        {% if car_info.rental_status == 0 %}
+                                                                                            <span
+                                                                                                class="m-l-10">Арендовать</span>
+                                                                                        {% else %}
+                                                                                            <span
+                                                                                                class="m-l-10">Завершить аренду</span>
+                                                                                        {% endif %}
+                                                                                    </button>
+                                                                            </form>
+                                                                            {% endif %}
+                                                                            {% if user_info.id == 3 and car_info.rental_status == 0 %}
+                                                                            <form action="" method="post"
+                                                                                class="d-inline-block">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-outline-primary waves-effect waves-light m-r-20">
+                                                                                    <i class="icofont icofont-edit f-16"></i>
+                                                                                    <span class="m-l-10">Изменить</span>
+                                                                                </button>
+                                                                            </form>
+                                                                            <form action="/delete_auto/{{car_info.id}}" method="post" class="d-inline-block">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-outline-danger waves-effect waves-light m-r-20">
+                                                                                    <i class="icofont icofont-ui-delete f-16"></i>
+                                                                                    <span class="m-l-10">Удалить</span>
+                                                                                </button>
+                                                                            </form>
+                                                                            {% endif %}
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="card product-detail-page">
+                                            <ul class="nav nav-tabs md-tabs tab-timeline" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active f-18 p-b-0" data-toggle="tab"
+                                                        href="#description" role="tab">История аренды</a>
+                                                    <div class="slide"></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-block">
+                                                <div class="tab-content bg-white">
+                                                    <div class="tab-pane active" id="description" role="tabpanel">
+                                                        <table class="table table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Дата начала аренды</th>
+                                                                    <th scope="col">Дата завершения аренды</th>
+                                                                    <th scope="col">Общая стоимость аренды</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>                                                        
+                                                                {% set count = namespace(value=1) %}                                                      
+                                                                {% for log in user_log %}                                                                
+                                                                    <tr>                                                              
+                                                                        <th scope="row">{{ count.value }}</th>
+                                                                        <td>{{ log.start_rental_time.strftime("%Y-%m-%d %H:%M:%S")}}</td>
+                                                                        <td>{{ log.end_rental_time.strftime("%Y-%m-%d %H:%M:%S") }}</td>
+                                                                        <td>{{ log.cost_rental }}</td>
+                                                                    </tr>
+                                                                    {% set count.value = count.value + 1 %}
+                                                                {% endfor %}
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/assets/pages/waves/js/waves.min.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+
+    <script type="text/javascript" src="/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="/bower_components/modernizr/js/css-scrollbars.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jquery-bar-rating/js/jquery.barrating.min.js"></script>
+    <script type="text/javascript" src="/assets/pages/rating/rating.js"></script>
+
+    <script type="text/javascript" src="/bower_components/slick-carousel/js/slick.min.js"></script>
+
+    <script type="text/javascript" src="/assets/pages/product-detail/product-detail.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+    <script src="/assets/js/vertical/vertical-layout.min.js"></script>
+    <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+</body>
+
+</html>

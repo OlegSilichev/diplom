@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Журнал аренды</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+
+    <link href="/assets/pages/jquery.filer/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+    <link href="/assets/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" type="text/css"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/component.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.mCustomScrollbar.css">
+</head>
+
+<body>
+
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="mobile-search waves-effect waves-light">
+                            <div class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close"><i
+                                                class="ti-close input-group-text"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn"><i
+                                                class="ti-search input-group-text"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a href="#!" class="waves-effect waves-light">
+                                    <img src="/assets/images/user.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span>{{ user_info.name }}</span>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li class="waves-effect waves-light">
+                                        <a href="/logout">
+                                            Выход
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header" style="min-height: 104px;">
+                                </div>
+                            </div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="/user_index/{{ user_info.id }}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>N</b></span>
+                                        <span class="pcoded-mtext">Главная</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Журнал аренды</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h5>Журнал аренды</h5>
+                                                    </div>
+                                                    <div class="card-block table-responsive table-content project-table">
+                                                        <table id="e-product-list"
+                                                            class="table table-striped dt-responsive nowrap">
+                                                             <thead>
+                                                                 <tr>
+                                                                    <th>Image</th>
+                                                                    <th>Автомобиль</th>
+                                                                    <th>Количество бронирований</th>
+                                                                    <th>Общее время аренды (минуты)</th>
+                                                                    <th>Общая стоимость аренды</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for car in car_all%}
+                                                                {% set t_rent = namespace(value=0) %}
+                                                                {% set t_time = namespace(value=0) %}
+                                                                {% set t_cost = namespace(value=0) %}
+                                                                    {% for log in log_all %}
+                                                                        {% if car.id == log.car_id %}
+                                                                            {% set t_rent.value = t_rent.value + 1 %}
+                                                                            {% set t_time.value = t_time.value + ((log.end_rental_time - log.start_rental_time).seconds // 60) %}
+                                                                            {% set t_cost.value = t_cost.value + log.cost_rental %}
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                    {% if t_rent.value != 0 %}
+                                                                        <tr>
+                                                                            <td class="pro-list-img">
+                                                                                 <img src="{{ url_for('get_img', id=car.id, num=0) }}"
+                                                                                    class="img-fluid" alt="tbl"
+                                                                                    style="max-width: 64px;">
+                                                                            </td>
+                                                                            <td class="pro-name">
+                                                                                <h6>{{ car.name_car }}</h6>
+                                                                                <span>{{ car.description }}</span>
+                                                                            </td>
+                                                                            <td>{{ t_rent.value }}</td>
+                                                                            <td>{{ t_time.value }}</td>
+                                                                            <td>{{ t_cost.value }} рублей</td>
+                                                                        </tr>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/assets/pages/waves/js/waves.min.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+
+    <script type="text/javascript" src="/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="/bower_components/modernizr/js/css-scrollbars.js"></script>
+
+    <script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <script src="/assets/pages/jquery.filer/js/jquery.filer.min.js"></script>
+    <script src="/assets/pages/filer/custom-filer.js" type="text/javascript"></script>
+    <script src="/assets/pages/filer/jquery.fileuploads.init.js" type="text/javascript"></script>
+
+    <script src="/assets/js/classie.js"></script>
+    <script src="/assets/js/modalEffects.js"></script>
+
+    <script type="text/javascript" src="/assets/pages/product-list/product-list.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+    <script src="/assets/js/vertical/vertical-layout.min.js"></script>
+    <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+</body>
+
+</html>

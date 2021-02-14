@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Твой каршеринг. Список авто.</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords"
+        content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+    <meta name="author" content="Codedthemes" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/bower_components/jquery-bar-rating/css/fontawesome-stars.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/themify-icons/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/icon/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/jquery.mCustomScrollbar.css">
+    
+</head>
+
+<body>
+    <div class="theme-loader">
+        <div class="loader-track">
+            <div class="preloader-wrapper">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+                <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="mobile-search waves-effect waves-light">
+                            <div class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close"><i
+                                                class="ti-close input-group-text"></i></span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn"><i
+                                                class="ti-search input-group-text"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a href="#!" class="waves-effect waves-light">
+                                    <img src="/assets/images/user.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span>{{ name }}</span>
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li class="waves-effect waves-light">
+                                        <a href="/logout">
+                                            Выход
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header" style="min-height: 123px;">
+                                </div>
+                            </div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href={{ link }} class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>N</b></span>
+                                        <span class="pcoded-mtext">{{ panel }}</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/user_rental_log/{{ id }}" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-car"></i><b>N</b></span>
+                                        <span class="pcoded-mtext">Журнал аренды</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/logout" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-car"></i><b>N</b></span>
+                                        <span class="pcoded-mtext">Выход</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="page-header">
+                            <div class="page-block">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="page-header-title">
+                                            <h5 class="m-b-10">Список автомобилей</h5>
+                                            <p class="m-b-0">Выбери любой и катайся с поминутной оплатой</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="breadcrumb">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% for car in car_list %}
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-12">
+                                                <div class="card prod-view">
+                                                    <div class="prod-item text-center">
+                                                        <div class="prod-img">
+                                                            <div class="option-hover">
+                                                                <button type="button"
+                                                                    class="btn btn-success btn-icon waves-effect waves-light m-r-15 hvr-bounce-in option-icon">
+                                                                    <i class="icofont icofont-cart-alt f-20"></i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    class="btn btn-primary btn-icon waves-effect waves-light m-r-15 hvr-bounce-in option-icon">
+                                                                    <i class="icofont icofont-eye-alt f-20"></i>
+                                                                </button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger btn-icon waves-effect waves-light hvr-bounce-in option-icon">
+                                                                    <i class="icofont icofont-heart-alt f-20"></i>
+                                                                </button>
+                                                            </div>
+                                                            <a href="/user_auto_detail/{{ id }}/{{ car.id }}" class="hvr-shrink">
+                                                                <img src="{{ url_for('get_img', id=car.id, num=0 ) }}"
+                                                                    class="img-fluid o-hidden" alt="Мы оченьхотим, чтобы картнка отображалась. Но пока есть трудности.">
+                                                                </a>
+                                                                <div class="p-new"><a href=""> Выбрать </a></div>
+                                                        </div>
+                                                        <div class="prod-info">
+                                                            <a href="#!" class="txt-muted">
+                                                                <h4>{{ car.name_car }}</h4>
+                                                            </a>
+                                                            <span class="prod-price">{{ car.rental_price }} р/мин</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/bower_components/jquery/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/bower_components/popper.js/js/popper.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/assets/pages/waves/js/waves.min.js"></script>
+
+    <script type="text/javascript" src="/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+
+    <script type="text/javascript" src="/bower_components/modernizr/js/modernizr.js"></script>
+    <script type="text/javascript" src="/bower_components/modernizr/js/css-scrollbars.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
+    <script src="/assets/js/vertical/vertical-layout.min.js"></script>
+    <script src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+    
+</body>
+
+</html>
